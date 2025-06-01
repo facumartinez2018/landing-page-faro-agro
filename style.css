@@ -1,0 +1,57 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+        font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    background-color: #058342;
+    height: 70px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo img {
+    padding: 1rem 0rem 3.2rem 0rem;
+    max-height: 150px;
+    width: auto;
+    display: flex;
+    object-fit: contain;
+    margin: -40px;
+  }
+  
+  
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+      }
+
+      .nav-links a,
+.nav-links a:visited {
+  color: #f1c40f;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 10;
+  letter-spacing: 0,5px;
+}
+
+      
+      .nav-links a:hover {
+        color: #ffffff;
+        border-bottom: 2px solid #ffffff;
+      }
+      
+  

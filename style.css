@@ -10,25 +10,73 @@
     background-color: #f9f9f9;
   }
   
+  :root {
+    /* Colores de fondo */
+    --bg-light-green: #1d7208ee;
+    --bg-white: #ffffff;
+  
+    /* Colores de texto */
+    --text-white: #f9f9f9;
+    --text-yellow: #f1c40f;
+    --text-dark: #2e2e2e;
+  
+    /* Colores complementarios */
+    --accent-green: #27ae60;
+    --accent-yellow: #f39c12;
+  }
+
+  body {
+    background-color: var(--bg-light-green);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2 {
+    color: var(--text-white);
+  }
+  
+  a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--accent-yellow);
+  }
+
+  .descripcion-faro {
+    font-size: 0.95rem;
+    max-width: 900px;
+    text-align:center;
+    padding: 1rem;
+    
+  }
+  
+  
   /* Navbar */
   .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
-    background-color: #058342;
+    padding: 0  1.5rem;
+    background-color: #033b1e;
     height: 70px; 
     overflow: hidden; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
   }
   
   .logo img {
     padding: 1rem 0rem 3.2rem 0rem;
-    max-height: 150px;
+    max-height: 140px;
     width: auto;
     display: flex;
     object-fit: contain;
-    margin: -40px;
+    margin-right: 15px;
   }
   
   
@@ -45,13 +93,175 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 10;
-  letter-spacing: 0,5px;
+  letter-spacing: 0.5px;
 }
 
       
       .nav-links a:hover {
         color: #ffffff;
         border-bottom: 2px solid #ffffff;
+              }
+
+      .faro-foto img {
+        width: 100%;
+        max-width: 300px;   
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;     /* centra la imagen */
+        border-radius: 8px; 
       }
+      .Faro-fundador img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;  
+        border: 2px solid var(--accent-green);
+      }
+            
       
+  /* EL main va a servir de contenedor principal de todas las secciones y para darle fondo a las selecciones que van a estar limitadas 1200px maximo y centrarlas en las paginas para resoluciones grandes */
+
+  main { background-color: var(--bg-light-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 70 px;
+
+  }
   
+  #Servicio { 
+    margin: 50px;
+    padding:  3rem;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+   }
+
+  .faro-info {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  .faro-info h1 {
+    font-size: 48px;
+    width: 80%;
+    min-width: 500px;
+    font-weight: 800;
+    color: #ffe604;
+    
+  }
+  .faro-info p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    width: 70%;
+    color: #fffffd;
+    
+  }
+
+  .faro-info a {
+    color: #fdfdfbab;
+    background-color: #f1c40f;
+    width: 120px;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .faro-foto { 
+    font-size: 0.80rem;
+    width: 300px;
+    padding: 1rem;
+    background-color: #f1c40f;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faro-foto-bottom { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .faro-foto-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .faro-foto-top h2 {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    .faro-foto-top span {
+      background-color: #053001;
+      text-align: center;
+      width: 50px;
+      padding: 3px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+
+    .Faro-fundador {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fundador-info,
+.Faro-inicios {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+
+.intro {
+  background-color: var(--bg-light-green);
+  padding: 1rem ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: var(--text-white);
+}
+
+.intro-content {
+  width: 70%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  gap: 1rem;
+}
+
+
+.intro p {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--text-white);
+  margin: 0;
+  
+}
+

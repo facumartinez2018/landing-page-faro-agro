@@ -265,3 +265,158 @@
   
 }
 
+@media (max-width: 768px) {
+  #Servicio {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .faro-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .faro-info h1,
+  .faro-info p {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .faro-foto {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .intro-content {
+    padding: 1rem;
+  }
+
+  .intro p {
+    margin-right: 0;
+    font-size: 1rem;
+  }
+
+  .intro a {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .logo img {
+    max-height: 100px;
+  }
+}
+
+#productos{
+  padding: 70 px 0;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  color: #f9f9f9;
+}
+
+#productos h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.product-cards-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  width: 300px;
+  height: 290px;
+  padding: 20px 30px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f1c40f;
+  border-radius: 20px;  
+  gap: 20px;
+}
+
+.product-card img {
+  width: 50px;     /* o 80px, ajustá según necesites */
+  height: auto;     /* mantiene proporción */
+  display: block;
+  margin: 0 auto;   /* centra horizontalmente */
+}
+
+.product-card h3 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.product-card p {
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+#discover{
+  padding: 70px 0;
+  max-width: 1200px;
+}
+
+.discover-info{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+#discover h2 {
+  font-size: 32px;
+  font-weight: 500;
+  width: 45%;
+}
+
+.discover-text{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  gap: 20px;
+}
+.discover-text p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #f9f9f9;
+}
+
+.discover-text a {
+  color: #f1c40f;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.discover-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.discover-cards img {
+  width: 30%;
+
+}

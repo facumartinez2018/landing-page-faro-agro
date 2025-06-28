@@ -20,17 +20,20 @@
       <div class="logo">
         <img src="img/logo.png" alt="Logo Faro Agro" />
       </div>
-      <ul class="nav-links">
+      <button class="hamburger" id="hamburger">
+        &#9776;
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#">Inicio</a></li>
         <li><a href="#">Servicios</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Contacto</a></li>
+        <li><a href="#carrito">🛒<span id="cart-count">0</span></a></li>
       </ul>
     </nav>
   </header>
 
-
-<main>
+<main
   <!--servicio-->
   <section id="Servicio">
   <div class="faro-info">
@@ -87,7 +90,7 @@
     </div>
   </section>
 
-</main>
+
 
 <section id="productos">
 
@@ -121,8 +124,8 @@
 
 <section id="discover">
   <div class="discover-info">
-  <h2>Potencia tu rendimiento</h2>
   <div class="discover-text">
+    <h2>Potenciá tu rendimiento</h2>
     <p>Brindamos asesoramiento con herramientas digitales para que logres alcanzar tu máximo potencial en cada campaña.</p>
     <a href="#">Conocé tu potencial</a>
   </div>
@@ -133,10 +136,155 @@
   </div>
 
   </div>
-
+  
 
 </section>
 
+<section id="carrito">
+  <h2>🛒 Tu Carrito de Productos</h2>
+  <div class="cart-items">
+
+    <div class="cart-item">
+      <div class="cart-info">
+        <img src="img/faro-product.jpg" alt="Monitoreo">
+        <div>
+          <p class="cart-title">Monitoreo de Cultivos</p>
+          <p class="cart-price">$20 USD</p>
+        </div>
+      </div>
+      <div class="cart-controls">
+        <button onclick="cambiarCantidad(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="cambiarCantidad(this, 1)">+</button>
+      </div>
+    </div>
+
+    <div class="cart-item">
+      <div class="cart-info">
+        <img src="img/faro-product.jpg" alt="Prescripción">
+        <div>
+          <p class="cart-title">Mapas de Prescripción</p>
+          <p class="cart-price">$8 USD</p>
+        </div>
+      </div>
+      <div class="cart-controls">
+        <button onclick="cambiarCantidad(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="cambiarCantidad(this, 1)">+</button>
+      </div>
+    </div>
+
+    <div class="cart-item">
+      <div class="cart-info">
+        <img src="img/faro-product.jpg" alt="Dron">
+        <div>
+          <p class="cart-title">Escaneo con Dron</p>
+          <p class="cart-price">$50 USD</p>
+        </div>
+      </div>  
+      <div class="cart-controls">
+        <button onclick="cambiarCantidad(this, -1)">-</button>
+        <span>0</span>
+        <button onclick="cambiarCantidad(this, 1)">+</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="cart-summary">
+    <p>Total: <span id="cart-total">$0 USD</span></p>
+    <button onclick="finalizarPedido()">Finalizar pedido</button>
+  </div>
+</section>
+
+
+<section id="contacto">
+  <div class="contacto-container">
+    <h2>Contacto</h2>
+    <p>¿Querés que te asesoremos? Escribinos y nos pondremos en contacto pronto.</p>
+    <form class="contacto-form">
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <textarea placeholder="Escribí tu consulta..." rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <img src="img/logo.png" alt="Logo Faro Agro" class="footer-logo" />
+    <p>© 2025 Faro Agro. Todos los derechos reservados.</p>
+    <div class="footer-redes">
+      <a href="https://www.linkedin.com/company/faro-agro" target="_blank">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.cart-item');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+
+    const precios = {
+      'Monitoreo de Cultivos': 20,
+      'Mapas de Prescripción': 8,
+      'Escaneo con Dron': 50
+    };
+
+    function actualizarTotales() {
+      let total = 0;
+      let count = 0;
+
+      items.forEach(item => {
+        const nombre = item.querySelector('.cart-title').textContent;
+        const cantidad = parseInt(item.querySelector('.cart-controls span').textContent);
+        total += precios[nombre] * cantidad;
+        count += cantidad;
+      });
+
+      cartTotal.textContent = `$${total} USD`;
+      cartCount.textContent = count;
+    }
+
+    items.forEach(item => {
+      const controls = item.querySelector('.cart-controls');
+      const cantidadEl = controls.querySelector('span');
+      let cantidad = 0;
+
+      controls.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cambio = btn.textContent === '+' ? 1 : -1;
+          cantidad = Math.max(0, parseInt(cantidadEl.textContent) + cambio);
+          cantidadEl.textContent = cantidad;
+          actualizarTotales();
+        });
+      });
+    });
+  });
+
+  function finalizarPedido() {
+    alert("¡Gracias por tu pedido! Pronto nos contactaremos. 🚜");
+  }
+</script>
 
 
 

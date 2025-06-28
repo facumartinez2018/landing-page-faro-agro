@@ -120,6 +120,50 @@
         border: 2px solid var(--accent-green);
       }
             
+/* Estilos para el menú hamburguesa responsivo */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #003300;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
+
       
   /* EL main va a servir de contenedor principal de todas las secciones y para darle fondo a las selecciones que van a estar limitadas 1200px maximo y centrarlas en las paginas para resoluciones grandes */
 
@@ -130,7 +174,7 @@
     color: white;
     width: 100%;
     padding: 1rem;
-    margin-top: 70 px;
+    margin-top: 70px;
 
   }
   
@@ -320,7 +364,8 @@
 }
 
 #productos{
-  padding: 70 px 0;
+  display: flex;
+  padding: 70px 0;
   max-width: 1200px;
   justify-content: center;
   align-items: center;
@@ -356,10 +401,10 @@
 }
 
 .product-card img {
-  width: 50px;     /* o 80px, ajustá según necesites */
-  height: auto;     /* mantiene proporción */
+  width: 50px;     
+  height: auto;     
   display: block;
-  margin: 0 auto;   /* centra horizontalmente */
+  margin: 0 auto;   
 }
 
 .product-card h3 {
@@ -373,50 +418,269 @@
 
 }
 
-#discover{
-  padding: 70px 0;
-  max-width: 1200px;
-}
-
-.discover-info{
+#discover {
+  padding: 60px 0;
+  background-color: var(--bg-light-green);
+  color: var(--text-white);
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 50px;
 }
 
-#discover h2 {
-  font-size: 32px;
-  font-weight: 500;
-  width: 45%;
+.discover-info {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
-.discover-text{
+.discover-text {
+  flex: 1 1 40%;
   display: flex;
   flex-direction: column;
-  width: 45%;
-  gap: 20px;
+  gap: 15px;
 }
+
+.discover-text h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .discover-text p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
-  color: #f9f9f9;
 }
 
 .discover-text a {
-  color: #f1c40f;
   font-weight: 600;
+  color: var(--accent-yellow);
   text-decoration: underline;
 }
 
 .discover-cards {
+  flex: 1 1 55%;
   display: flex;
+  gap: 14px;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .discover-cards img {
   width: 30%;
+  min-width: 120px;
+  border-radius: 10px;
+}
 
+
+/* Carrito */
+#carrito {
+  background-color: var(--bg-light-green); /* verde oscuro diferenciado */
+  color: var(--text-white);
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+#carrito h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-yellow);
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  background-color: #f1c40f;
+  color: #2e2e2e;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #033b1e;
+}
+
+.cart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart-price {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #033b1e;
+  margin-top: 0.2rem;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-controls button {
+  background-color: #033b1e;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-controls button:hover {
+  background-color: #145c32;
+}
+
+.cart-controls span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  padding: 1rem;
+  background-color: #f1c40f;
+  border-radius: 10px;
+  text-align: center;
+  color: #053001;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.cart-summary button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #053001;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-summary button:hover {
+  background-color: #074d02;
+}
+
+
+#contacto {
+  background-color: var(--bg-light-green);
+  color: var(--text-white);
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contacto-container {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacto-container h2 {
+  font-size: 1.8rem;
+  color: var(--accent-yellow);
+}
+
+.contacto-container p {
+  font-size: 0.95rem;
+  color: var(--text-white);
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5ce0bfd;
+  color:#4b4b4b;
+}
+
+.contacto-form textarea {
+  resize: vertical;
+}
+
+.contacto-form button {
+  background-color: #f5ce0bfd;
+  color: var(--text-dark);
+  padding: 0.6rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.contacto-form button:hover {
+  background-color:#f5ce0bfd;
+}
+
+
+.footer {
+  background-color: #032b15;
+  color: var(--text-white);
+  padding: 2rem 1rem;
+  text-align: center;
+  
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.footer-redes {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-redes a {
+  color: var(--accent-yellow);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-redes a:hover {
+  color: #f8f8f7;
 }

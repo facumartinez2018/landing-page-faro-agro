@@ -110,7 +110,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin: 0 auto;     /* centra la imagen */
+        margin: 0 auto;     
         border-radius: 8px; 
       }
       .Faro-fundador img {
@@ -124,7 +124,7 @@
 .hamburger {
   display: none;
   font-size: 2rem;
-  color: #fff;
+  color: #fdcf04;
   background: none;
   border: none;
   cursor: pointer;
@@ -134,7 +134,7 @@
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #003300;
+    background-color: #f9fd05;
     position: absolute;
     top: 60px;
     right: 0;
@@ -165,7 +165,7 @@
 
 
       
-  /* EL main va a servir de contenedor principal de todas las secciones y para darle fondo a las selecciones que van a estar limitadas 1200px maximo y centrarlas en las paginas para resoluciones grandes */
+  
 
   main { background-color: var(--bg-light-green);
     display: flex;
@@ -477,7 +477,7 @@
 
 /* Carrito */
 #carrito {
-  background-color: var(--bg-light-green); /* verde oscuro diferenciado */
+  background-color: var(--bg-light-green); 
   color: var(--text-white);
   padding: 3rem 1rem;
   margin-top: 4rem;

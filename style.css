@@ -121,25 +121,26 @@
       }
             
 /* Estilos para el menú hamburguesa responsivo */
+/* BOTÓN HAMBURGUESA */
 .hamburger {
   display: none;
   font-size: 2rem;
-  color: #fdcf04;
+  color: var(--text-yellow);
   background: none;
   border: none;
   cursor: pointer;
 }
-
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #f9fd05;
+    background-color: #033b1e; /* fondo igual al navbar */
     position: absolute;
-    top: 60px;
+    top: 70px;  /* igual a la altura del navbar */
     right: 0;
     width: 100%;
     padding: 1rem;
+    z-index: 1000; /* asegurate que esté encima */
   }
 
   .nav-links.active {
@@ -148,24 +149,15 @@
 
   .hamburger {
     display: block;
-    margin-left: auto;
-  }
-
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-
-  .nav-links li {
-    text-align: center;
-    margin: 1rem 0;
+    font-size: 2rem;
+    color: #f1c40f;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
   }
 }
 
-
-      
-  
 
   main { background-color: var(--bg-light-green);
     display: flex;

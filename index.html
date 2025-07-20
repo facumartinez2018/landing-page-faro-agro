@@ -302,6 +302,78 @@
 
 </main>
 
+
+<h1>Entrega Java testeo</h1>
+  <p>Abrir la consola para ver los resultados  (F12 o clic derecho &rarr; Inspeccionar &rarr; Consola).</p>
+
+  <script>
+    // 1 - Par o impar
+    function esParOImpar(numero) {
+      if (numero % 2 === 0) {
+        console.log(`${numero} es par`);
+      } else {
+        console.log(`${numero} es impar`);
+      }
+    }
+    esParOImpar(7);
+
+    // 2 - Cual es mayor
+    function compararNumeros(a, b) {
+      if (a > b) {
+        console.log(`${a} es mayor que ${b}`);
+      } else if (b > a) {
+        console.log(`${b} es mayor que ${a}`);
+      } else {
+        console.log(`${a} y ${b} son iguales`);
+      }
+    }
+    compararNumeros(10, 20);
+
+    // 3 - Múltiplo de 5
+    function esMultiploDeCinco(n) {
+      console.log(n % 5 === 0 ? `${n} es múltiplo de 5` : `${n} no es múltiplo de 5`);
+    }
+    esMultiploDeCinco(25);
+
+    // 4 - Contar hasta un número
+    function contarHasta(numero) {
+      for (let i = 0; i <= numero; i++) {
+        console.log(i);
+      }
+    }
+    contarHasta(5);
+
+    // 5 - Repetir palabra
+    function repetirPalabra(palabra, veces) {
+      for (let i = 0; i < veces; i++) {
+        console.log(palabra);
+      }
+    }
+    repetirPalabra("Faro Agro", 3);
+
+    // 6 - Mostrar array completo
+    function mostrarArray(array) {
+      array.forEach(valor => console.log(valor));
+    }
+    mostrarArray(["maíz", "trigo", "soja"]);
+
+    // 7 - Mostrar array sin la posición 5
+    function mostrarSinQuinto(array) {
+      array.forEach((valor, index) => {
+        if (index !== 4) console.log(valor);
+      });
+    }
+    mostrarSinQuinto([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+    // 8 - Multiplicar array
+    function multiplicarArray(array, numero) {
+      array.forEach(valor => console.log(valor * numero));
+    }
+    multiplicarArray([1, 2, 3, 4, 5], 3);
+  </script>
+
+
+
 <footer class="footer">
   <div class="footer-content">
     <img src="img/logo.png" alt="Logo Faro Agro" class="footer-logo" />
